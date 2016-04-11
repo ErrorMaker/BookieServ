@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using BookieServ.Objects;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
@@ -11,6 +11,7 @@ namespace BookieServ
   {
     private readonly Dictionary<string, int> _dice = new Dictionary<string, int>();
     private readonly Dictionary<string, string> _roomData = new Dictionary<string, string>();
+    private readonly Dictionary<string, RoomUser> _roomUsers = new Dictionary<string, RoomUser>();
     private readonly CryptoRandom _random = new CryptoRandom();
 
     public BookieService() : base()
